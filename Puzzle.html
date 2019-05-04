@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game Puzzle</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-fluid {
+            max-width: 940px;
+        }
+
+        .puzzles {
+            margin-top: 1em;
+        }
+
+        img {
+            display: block;
+            margin: 1em;
+            padding: 0.2em;
+            box-shadow: 2px 3px 3px purple;
+            width: 600px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="puzzles" align="center">
+        <img id="img1" src="images/funny-cat1_part1x1.jpg" onclick="clickAnh1();" alt="">
+        <img id="img2" src="images/funny-cat1_part2x1.jpg" onclick="clickAnh2();" alt="">
+        <img id="img3" src="images/funny-cat1_part3x1.jpg" onclick="clickAnh3();" alt="">
+        <img id="img4" src="images/funny-cat1_part4x1.jpg" onclick="clickAnh4();" alt="">
+        <img id="img5" src="images/funny-cat1_part5x1.jpg" onclick="clickAnh5();" alt="">
+    </div>
+</div>
+<script>
+    let name1 = "funny-cat1_part1x1";
+
+    // tao ham click vao anh
+    function clickAnh1() {
+        // check theo dieu kien va thay doi ten anh
+        if (name1 === "funny-cat1_part1x1") {
+            name1 = "monkey_part1x1";
+        } else if (name1 === "monkey_part1x1") {
+            name1 = "panda_swap_part1x1";
+        } else if (name1 === "panda_swap_part1x1") {
+            name1 = "funny-cat1_part1x1";
+        }
+        // Gan src theo id cua anh
+        document.getElementById('img1').src = "images/" + name1 + ".jpg";
+        // goi ham trong ham, check xem co dung cung 1 anh ko
+        check();
+    }
+
+    let name2 = "funny-cat1_part2x1";
+
+    // tao ham click vao anh
+    function clickAnh2() {
+        // check theo dieu kien va thay doi ten anh
+        if (name2 === "funny-cat1_part2x1") {
+            name2 = "monkey_part2x1";
+        } else if (name2 === "monkey_part2x1") {
+            name2 = "panda_swap_part2x1";
+        } else if (name2 === "panda_swap_part2x1") {
+            name2 = "funny-cat1_part2x1";
+        }
+        // Gan src theo id cua anh
+        document.getElementById('img2').src = "images/" + name2 + ".jpg";
+        // Gan src theo id cua anh
+        check();
+    }
+
+    let name3 = "funny-cat1_part3x1";
+
+    // tao ham click vao anh
+    function clickAnh3() {
+        // check theo dieu kien va thay doi ten anh
+        if (name3 === "funny-cat1_part3x1") {
+            name3 = "monkey_part3x1";
+        } else if (name3 === "monkey_part3x1") {
+            name3 = "panda_swap_part3x1";
+        } else if (name3 === "panda_swap_part3x1") {
+            name3 = "funny-cat1_part3x1";
+        }
+        // Gan src theo id cua anh
+        document.getElementById('img3').src = "images/" + name3 + ".jpg";
+
+        check();
+    }
+
+    let name4 = "funny-cat1_part4x1";
+
+    // tao ham click vao anh
+    function clickAnh4() {
+        // check theo dieu kien va thay doi ten anh
+        if (name4 === "funny-cat1_part4x1") {
+            name4 = "monkey_part4x1";
+        } else if (name4 === "monkey_part4x1") {
+            name4 = "panda_swap_part4x1";
+        } else if (name4 === "panda_swap_part4x1") {
+            name4 = "funny-cat1_part4x1";
+        }
+
+        document.getElementById('img4').src = "images/" + name4 + ".jpg";
+
+        check();
+    }
+
+    let name5 = "funny-cat1_part5x1";
+
+    // tao ham click vao anh
+    function clickAnh5() {
+        // check theo dieu kien va thay doi ten anh
+        if (name5 === "funny-cat1_part5x1") {
+            name5 = "monkey_part5x1";
+        } else if (name5 === "monkey_part5x1") {
+            name5 = "panda_swap_part5x1";
+        } else if (name5 === "panda_swap_part5x1") {
+            name5 = "funny-cat1_part5x1";
+        }
+        // Gan src theo id cua anh
+        document.getElementById('img5').src = "images/" + name5 + ".jpg";
+
+        check();
+    }
+
+    function check() {
+        if (name1 === "funny-cat1_part1x1" && name2 === "funny-cat1_part2x1" &&
+            name3 === "funny-cat1_part3x1" && name4 === "funny-cat1_part4x1" &&
+            name5 === "funny-cat1_part5x1") {
+
+            doiMau('img1');
+            doiMau('img2');
+            doiMau('img3');
+            doiMau('img4');
+            doiMau('img5');
+
+        } else {
+            backMau('img1');
+            backMau('img2');
+            backMau('img3');
+            backMau('img4');
+            backMau('img5');
+        }
+    }
+
+    function doiMau(id) {
+        document.getElementById(id).style.boxShadow = "4px 4px 9px red";
+    }
+
+    function backMau(id) {
+        document.getElementById(id).style.boxShadow = "4px 4px 9px purple";
+    }
+
+</script>
+</body>
+</html>
